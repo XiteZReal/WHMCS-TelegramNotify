@@ -56,7 +56,7 @@ class Telegram implements NotificationModuleInterface
 		$response = file_get_contents("https://api.telegram.org/bot".$botToken."/sendMessage?chat_id=".$botChatID."&message_thread_id=".$TopicGroup."&text=".$message."");
 
         if (!$response) { 
-			throw new Exception("Fuck");
+			throw new Exception("We Have Problem Bruh");
 		}
     }
 
@@ -73,7 +73,7 @@ class Telegram implements NotificationModuleInterface
 
 	public function sendNotification(NotificationInterface $notification, $moduleSettings, $notificationSettings)
     {
-        $botToken = $moduleSettings['botToken'];
+        	$botToken = $moduleSettings['botToken'];
 		$botChatID = $moduleSettings['botChatID'];
 		$TopicGroup = $moduleSettings['TopicGroup'];
 
@@ -83,7 +83,7 @@ class Telegram implements NotificationModuleInterface
 		$response = file_get_contents("https://api.telegram.org/bot".$botToken."/sendMessage?parse_mode=Markdown&chat_id=".$botChatID."&message_thread_id=".$TopicGroup."&text=".$message);
 
         if (!$response) { 
-			throw new Exception($response);
+			throw new Exception("We Have Problem Bruh");
 		}
     }
 }
